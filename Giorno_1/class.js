@@ -42,6 +42,10 @@ class Computer {
 
   keyboard = 'Italian'
 
+  static internalId = '05739823'
+  // "internalId" è una proprietà STATICA di Computer
+  // una proprietà statica NON viene trasmessa nelle istanze generate da Computer
+
   showBrand() {
     return `Io sono un computer di marca ${this.brand}`
   }
@@ -51,6 +55,8 @@ const c1 = new Computer('Apple')
 console.log('C1', c1)
 console.log(c1.showBrand()) // 'Io sono un computer di marca Apple'
 const c2 = new Computer('Microsoft')
+
+console.log(Computer.internalId) // '05739823'
 
 // in JS, come in praticamente TUTTI i linguaggi OOP, le classi possono essere ESTESE
 
