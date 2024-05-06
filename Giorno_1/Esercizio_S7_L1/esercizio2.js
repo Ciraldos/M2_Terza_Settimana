@@ -54,7 +54,7 @@ formTag.addEventListener('submit', function (e) {
     )
     pets.push(petFromFormValues)
   
-    console.log('CONTATTO CREATO', petFromFormValues)
+    console.log('ANIMALE CREATO', petFromFormValues)
     pName.value = ""
       oName.value = ""
       sName.value=""
