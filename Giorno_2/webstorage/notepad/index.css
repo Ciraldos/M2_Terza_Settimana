@@ -1,0 +1,23 @@
+html,
+body {
+  height: 100%;
+}
+
+header,
+footer {
+  flex-grow: 1;
+}
+
+main {
+  flex-grow: 2;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+body {
+  background-color: blanchedalmond;
+}

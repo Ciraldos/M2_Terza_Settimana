@@ -1,0 +1,8 @@
+{
+    "firstName": "Mario",
+    "lastName": "Bros",
+    "age": 80,
+    "skills": {
+        "test": []
+    }
+}
