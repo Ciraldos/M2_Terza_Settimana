@@ -20,14 +20,14 @@ window.onload = function() {
 };
 
 //contatore
-var contatore = sessionStorage.getItem('contatore') || 0;
+var contatore = sessionStorage.getItem("contatore");
 
 // Funzione per aggiornare il contatore e mostrare il tempo trascorso
  function aggiornaContatore() {
     contatore++; // Incrementa il contatore
     document.getElementById("contatore").innerHTML = contatore + " secondi"; // Mostra il tempo trascorso
-    sessionStorage.setItem('contatore', contatore); // Salva il valore del contatore nella sessionStorage
+    sessionStorage.setItem("contatore", contatore); // Salva il valore del contatore nella sessionStorage
 }
 
 // Avvia il contatore
-var intervallo = setInterval(aggiornaContatore, 1000);
+setInterval(aggiornaContatore, 1000);
