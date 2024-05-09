@@ -5,15 +5,15 @@ const generateBooks = function(array){
         const newDiv = document.createElement("div")
         newDiv.classList.add("col-3")
         newDiv.innerHTML = `
-        <div class="card border border-3 mt-3">
+        <div class="card border border-3 mt-3 h-100">
             <div class="card-body">
                 <div>
                     <img src="${book.img}" alt="logo" class="img-fluid">
                 </div>
-                <h5 class="card-title">Title: €${book.title}</h5>
+                <h5 class="card-title" id="book-title">Title: €${book.title}</h5>
                 <h5 class="card-title">Price: €${book.price}</h5>
                 <div class="text-center mt-3">
-                    <button type="button" class="btn btn-success">Compra Ora</button>
+                    <button type="button" class="btn btn-success compra-btn">Compra Ora</button>
                     <button type="button" class="btn btn-danger scarta-btn">Scarta</button>
                 </div>
             </div>
@@ -54,3 +54,16 @@ const getBooks = function (){
     }
     
 getBooks()
+
+window.onload = function(){
+    const saveitem = document.querySelectorAll(".compra-btn")
+    saveitem.addEventListener("click", function(){
+        const titleBook = document.getElementById("book-title")
+        localStorage.setItem("title-book", titleBook)
+        const element = document.createElement("li")
+        book = localStorage.getItem("title-book")
+        const list = document.getElementById("cart")
+        list.appendChild(element)
+
+    })
+}
