@@ -45,7 +45,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="backoffice.html">Backoffice</a>
+                <a class="nav-link" href="backoffice.html">Backoffice</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -75,11 +75,22 @@
                 class="card-img-top"
                 alt="..."
               />
-              <div class="card-body">
+              <div class="card-body text-center">
                 <h5 class="card-title" id="name"></h5>
                 <p class="card-text" id="description"></p>
                 <p class="card-text" id="time"></p>
                 <a href="#" class="btn btn-primary" id="price"></a>
+                <div>
+                  <h4 class="mt-4">ADMIN SECTION</h4>
+                  <div>
+                    <button class="btn btn-danger" onclick="deleteEvent()">
+                      ELIMINA
+                    </button>
+                    <button class="btn btn-warning" id="edit-button">
+                      MODIFICA
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

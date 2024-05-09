@@ -12,7 +12,11 @@
     />
     <style>
       main {
-        background-color: rgb(227 200 200) !important;
+        background-color: rgb(191 212 235) !important;
+      }
+
+      footer {
+        background-color: #7373ff;
       }
     </style>
   </head>
@@ -36,10 +40,12 @@
             <a class="navbar-brand" href="#">EpiTicket</a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Backoffice</a>
+                <a class="nav-link" href="backoffice.html">Backoffice</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -62,7 +68,7 @@
       <h2 class="text-center mt-2">EpiTickets - Biglietti & Concerti</h2>
       <div class="container">
         <div
-          class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mt-2"
+          class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mt-2 g-3"
           id="events-row"
         ></div>
       </div>
@@ -91,7 +97,7 @@
             class="col-12 col-md-4 text-center d-flex justify-content-center align-items-center"
           >
             <!-- COLONNA MID -->
-            <h5>EPICODE <span id="year"></span></h5>
+            <h5 class="text-light">EPICODE - <span id="year"></span></h5>
           </div>
           <div class="col-12 col-md-4">
             <!-- COLONNA DX -->
