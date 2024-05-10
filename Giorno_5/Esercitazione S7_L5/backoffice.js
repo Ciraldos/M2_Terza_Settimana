@@ -86,14 +86,14 @@ if (productId) {
   const divbuttons = document.getElementById("buttons")
 
   divbuttons.innerHTML = `
-  <button type="submit" class="btn btn-outline-light btn-primary me-2 id="btn-sub">Crea!</button>
-  <button type="submit" class="btn btn-danger me-2" onclick="deleteProduct()" id="btn-delete">Elimina!</button>
-  <button type="reset" class="btn btn-warning" id="btn-reset">Reset!</button>
+  <button type="submit" class="btn btn-outline-light btn-primary me-2" id="btn-sub">CREA</button>
+  <button type="submit" class="btn btn-danger me-2" onclick="deleteProduct()" id="btn-delete">ELIMINA</button>
+  <button type="reset" class="btn btn-warning" id="btn-reset">RESET</button>
   `
 
   console.log(document.getElementsByClassName('btn-primary')[0])
   // modifichiamo l'etichetta del bottone del form da "CREA!" a "MODIFICA!"
-  document.getElementsByClassName('btn-primary')[0].innerText = 'MODIFICA!'
+  document.getElementsByClassName('btn-primary')[0].innerText = 'MODIFICA'
 }
 
 
@@ -129,15 +129,11 @@ const submitProduct = function (e) {
   // Verifica se l'utente ha confermato l'eliminazione
 
   fetch(URL, {
-    // questo oggetto va indicato qualora l'operazione NON sia la default
-    // già il fatto che opereremo una POST e non una GET fa in modo che questo secondo parametro vada dichiarato
     method: methodToUse,
-    body: JSON.stringify(productForm), // il body in una request è SEMPRE UNA STRINGA
+    body: JSON.stringify(productForm), 
     headers: {
-      'Content-type': 'application/json', // informiamo le API che (anche se in formato stringa) stiamo inviando un OGGETTO
+      'Content-type': 'application/json', 
       Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjNkZGNkNjgxODQ0MjAwMTUzNzU4OWYiLCJpYXQiOjE3MTUzMzAyNjIsImV4cCI6MTcxNjUzOTg2Mn0.HzoKSqabmjuHCLy5nFws77BouB4WFCrQ3Bdj1xnhkvk",
-      // se avessimo un'API protetta, in questo oggetto headers ci andrebbe anche l'autenticazione:
-      // Authorization: 'Bearer xxxxxxxxx'
     },
   })
     .then((response) => {
@@ -146,7 +142,6 @@ const submitProduct = function (e) {
         alert(`Prodotto ${productId ? 'modificato' : 'creato'}!`)
         location.assign('index.html')
       } else {
-        // il concerto NON è stato salvato! -> andare nel network tab del browser e indagare lì
         console.log('Errore nel salvataggio della risorsa')
       }
     })

@@ -12,10 +12,10 @@ const generateProductCards = function (products) {
           <h5 class="card-title">${product.name}</h5>
           <p class="card-text fw-semibold">Brand: ${product.brand}</p>
           <p class="card-text">${product.description}</p>
-          <div class="d-flex justify-content-around">
+          <div class="d-flex justify-content-around" id="btn-group">
             <button class="btn btn-info btn-outline-dark shadow-sm">${product.price}€</button>
             <a class="btn btn-warning btn-outline-dark shadow-sm" href="backoffice.html?productId=${product._id}" id="edit-button">MODIFICA</a>
-            <a class="btn btn-outline-dark btn-warning shadow-sm" href="details.html?productId=${product._id}">INFO!</a>
+            <a class="btn btn-outline-dark btn-warning shadow-sm" href="details.html?productId=${product._id}">INFO</a>
           </div>
         </div>
       </div>

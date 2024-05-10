@@ -10,22 +10,10 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <style>
-      header {
-        background-color: #efbc9b;
-      }
-
-      main {
-        background-color: #fbf3d5 !important;
-      }
-
-      footer {
-        background-color: #9cafaa;
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/css/style.css">
   </head>
   <body class="vh-100 d-flex flex-column">
-    <header>
+    <header class="fixed-top shadow">
       <!-- NAVBAR DARK -->
       <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
@@ -70,8 +58,8 @@
       </nav>
     </header>
 
-    <main class="flex-grow-1">
-      <h2 class="text-center fst-italic mt-2">TechShop - Amministrazione</h2>
+    <main class="flex-grow-1 mt-5">
+      <h2 class="text-center fst-italic mt-5">TechShop - Amministrazione</h2>
       <div class="container">
         <div class="row mt-4 justify-content-center my-5">
           <div class="col-12 col-lg-6">
@@ -120,7 +108,7 @@
                 <input type="number" class="form-control" id="price" required />
               </div>
               <div class="d-flex" id="buttons">
-                <button type="submit" class="btn btn-outline-light btn-primary">Crea!</button>
+                <button type="submit" class="btn btn-outline-light btn-primary" id="btn-create">CREA</button>
               </div>
             </form>
           </div>

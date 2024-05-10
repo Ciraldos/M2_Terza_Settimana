@@ -1,0 +1,40 @@
+  header {
+    background-color: white;
+  }
+
+  main{
+    background: rgb(236,236,229);
+    background: linear-gradient(180deg, rgba(236,236,229,1) 42%, rgba(221,221,214,1) 100%);
+  }
+
+  #btn-group button, #btn-group a, #btn-sub, #btn-delete, #btn-reset, #btn-create, #price{
+    border: #cccccc 1px solid;
+    color: rgb(0, 0, 0);
+    background-color: #ecece5;
+    font-size: smaller;
+    border-radius: 2px;
+  }
+
+  #btn-group button:hover, #btn-group a:hover, #btn-sub:hover, #btn-delete:hover, #btn-reset:hover, #btn-create:hover, #price:hover{
+    color: #ecece5;
+    background-color: #000000;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    z-index: 2;
+    transition: 200ms;
+  }
+  
+  footer {
+    background-color: white;
+  }
+
+  header a:not(.navbar-brand):hover{
+    text-decoration:underline !important;
+  }
+
+  footer a:hover{
+    text-decoration:underline !important;
+  }
+

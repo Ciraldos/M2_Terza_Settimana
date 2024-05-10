@@ -10,22 +10,10 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <style>
-      header {
-        background-color: #efbc9b;
-      }
-
-      main {
-        background-color: #fbf3d5 !important;
-      }
-
-      footer {
-        background-color: #9cafaa;
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body class="vh-100 d-flex flex-column">
-    <header>
+    <header class="fixed-top shadow">
       <!-- NAVBAR DARK -->
       <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
@@ -74,10 +62,10 @@
       <h2 class="text-center fst-italic mt-2">TechShop - Dettagli</h2>
       <div class="container">
         <div class="row mt-4 justify-content-center my-5">
-          <div class="col-12 col-lg-6">
-            <div class="card">
+          <div class="col-12 col-lg-3 py-3">
+            <div class="card shadow-sm rounded-4">
               <img
-                class="card-img-top"
+                class="card-img-top img-fluid p-3"
                 id="imgProduct"
                 alt="Immagine Prodotto"
               />
@@ -86,7 +74,7 @@
                 <p class="card-text" id="description"></p>
                 <p class="card-text" id="brand"></p>
 
-                <a href="#" class="btn btn-primary" id="price"></a>
+                <a href="#" class="btn btn-primary text-center" id="price"></a>
               </div>
             </div>
           </div>

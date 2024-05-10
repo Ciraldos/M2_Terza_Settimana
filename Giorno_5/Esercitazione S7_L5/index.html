@@ -10,24 +10,12 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <style>
-      header {
-        background-color: #efbc9b;
-      }
-
-      main {
-        background-color: #fbf3d5 !important;
-      }
-
-      footer {
-        background-color: #9cafaa;
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body class="vh-100 d-flex flex-column">
-    <header class="fixed-top">
+    <header class="fixed-top shadow-sm">
       <!-- NAVBAR DARK -->
-      <nav class="navbar navbar-expand-md">
+      <nav class="navbar navbar-expand-md px-3">
         <div class="container-fluid">
           <button
             class="navbar-toggler"
@@ -71,7 +59,7 @@
     </header>
 
     <main class="flex-grow-1 mt-5">
-      <h2 class="text-center display-3 fw-bolder text-dark fst-italic mt-4">
+      <h2 class="text-center display-3 fw-bolder text-dark fst-italic mt-5">
         TechShop
       </h2>
       <h4 class="text-center text-dark mt-3">
@@ -79,13 +67,13 @@
       </h4>
       <div class="container">
         <div
-          class="row row-cols-1 row-cols-md-2 row-cols-lg-4 my-5 g-3"
+          class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mb-5 mt-3 g-3"
           id="products-row"
         ></div>
       </div>
     </main>
 
-    <footer class="border-top">
+    <footer class="border-top shadow-sm">
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-4">
