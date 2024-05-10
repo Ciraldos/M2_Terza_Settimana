@@ -24,6 +24,8 @@ const generateProductCards = function (products) {
   })
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const spinner = document.getElementById("loadingSpinner");
 const getEvents = function () {
   //  recuperiamo la lista di eventi attualmente nel database
   fetch("https://striveschool-api.herokuapp.com/api/product/", {
@@ -83,6 +85,7 @@ const getEvents = function () {
       console.log('ARRAY!', array)
       // creiamo le card per la landing page
       generateProductCards(array)
+      spinner.style.visibility = "hidden";
     })
     .catch((err) => {
       console.log('ERRORE!', err)
@@ -91,3 +94,4 @@ const getEvents = function () {
 }
 
 getEvents()
+})
