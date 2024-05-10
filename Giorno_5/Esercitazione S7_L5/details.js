@@ -1,11 +1,6 @@
-// noi vogliamo recuperare i dettagli di UN SINGOLO EVENTO
-// GET su "https://striveschool-api.herokuapp.com/api/agenda" -> TUTTI GLI EVENTI PRESENTI IN DB
-// GET su "https://striveschool-api.herokuapp.com/api/agenda/_id" -> UN EVENTO IN PARTICOLARE
+// Pagina Details con relative fuznioni
 
-// all'avvio della pagina dettagli noi vogliamo caricare i dati FRESCHI del concerto in questione
-// lo faremo con una GET molto specifica grazie all'_id del concerto che ci siamo passati nella barra degli indirizzi
-
-const addressBarContent = new URLSearchParams(location.search) // isola i parametri nel contenuto della barra degli indirizzi
+const addressBarContent = new URLSearchParams(location.search)
 console.log(addressBarContent)
 const productId = addressBarContent.get('productId')
 
@@ -19,12 +14,51 @@ const getProductData = function () {
       if (response.ok) {
         return response.json()
       } else {
-        throw new Error("Errore nel recupero dei dettagli dell'evento")
+        switch (response.status) {
+          case 401:
+            throw new Error(
+              "Errore 401: Non autorizzato. Assicurati di avere le credenziali corrette."
+            );
+          case 403:
+            throw new Error(
+              "Errore 403: Accesso negato. Non hai i permessi per accedere a questa risorsa."
+            );
+          case 404:
+            throw new Error(
+              "Errore 404: Risorsa non trovata. Verifica l'URL e riprova."
+            );
+          case 500:
+            throw new Error(
+              "Errore 500: Errore interno del server. Riprova più tardi."
+            );
+          case 502:
+            throw new Error(
+              "Errore 502: Il server ha ricevuto una risposta non valida."
+            );
+          case 503:
+            throw new Error(
+              "Errore 503: Il server non è attualmente disponibile (sovraccarico o in manutenzione)."
+            );
+          case 504:
+            throw new Error(
+              "Errore 504: Il server ha impiegato troppo tempo a rispondere."
+            );
+          default:
+            if (response.status >= 400 && response.status < 500) {
+              throw new Error(
+                `Errore client ${response.status}: ${response.statusText}`
+              );
+            } else if (response.status >= 500 && response.status < 600) {
+              throw new Error(
+                `Errore server ${response.status}: ${response.statusText}`
+              );
+            }
+            throw new Error(`${response.status}: ${response.statusText}`);
+        }
       }
     })
     .then((product) => {
       console.log('DETTAGLI RECUPERATI', product)
-      // ora manipolo il DOM e riempio la card
       document.getElementById('name').innerText = product.name
       document.getElementById('description').innerText = product.description
       document.getElementById('brand').innerText = product.brand
@@ -32,7 +66,8 @@ const getProductData = function () {
       document.getElementById('price').innerText = "€ " + product.price 
     })
     .catch((err) => {
-      console.log('ERRORE', err)
+      console.log('ERRORE!', err)
+      alert(`An error occurred: ${err.message}`);
     })
 }
 
